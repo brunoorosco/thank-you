@@ -31,7 +31,7 @@ export default function ThankYou() {
         <h1 className="mb-4 text-4xl font-bold">Muito Obrigado</h1>
         <h1 className="mb-4 text-5xl font-bold">{name}!</h1>
         <p className="container lg:w-1/3 mx-auto mb-6 text-lg">{message}</p>
-        <p className="container lg:w-1/3 mx-auto mb-6 text-lg">{message1}</p>
+        <p className="container lg:w-1/3 mx-auto text-lg">{message1}</p>
       </div>
     </div>
   );
