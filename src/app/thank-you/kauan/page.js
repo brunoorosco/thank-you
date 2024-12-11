@@ -22,7 +22,7 @@ export default function ThankYou() {
           <Image
             width={250}
             height={250}
-            src={"/kauan.jpg"}
+            src={"/kauan.png"}
             alt="LinkedIn Profile"
             className="object-cover"
           />
