@@ -1,47 +1,38 @@
-'use client' 
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import { motion } from 'framer-motion';
+"use client";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
-const name  = 'Joãop Custódio'
-const message = 'Desejo a você muito sucesso em sua jornada de aprendizado e desenvolvimento de habilidades técnicas. Espero que você continue a se destacar e a contribuir para o sucesso da sua equipe. Parabéns pelo seu comprometimento e dedicação!';
+const name = "João Custódio";
+const message = `Meu agradecimento vai para você, que demonstra um empenho inigualável em tudo o que faz. 
+O seu desempenho não apenas atinge as metas, mas as supera constantemente, 
+mostrando um verdadeiro compromisso com a excelência.`;
+const message1 = "Desejo um Feliz Natal e um próspero Ano Novo!";
 
 export default function ThankYou() {
-  const [photo, setPhoto] = useState(null);
-  const linkedInProfile = 'https://www.linkedin.com/in/brunoorosco'; // Substitua pelo URL real.
-
-  useEffect(() => {
-    // Simular busca de foto no LinkedIn.
-    async function fetchPhoto() {
-      try {
-        const response = await axios.get('/api/linkedin-photo', {
-          params: { profileUrl: linkedInProfile },
-        });
-        setPhoto(response.data.photoUrl);
-      } catch (error) {
-        console.error('Error fetching photo:', error);
-      }
-    }
-    fetchPhoto();
-  }, []);
-
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-500 to-purple-600 flex items-center justify-center">
-      <div className="text-center text-white p-6">
-        <h1 className="text-4xl font-bold mb-4">Muito Obrigado {name}!</h1>
-        <p className="text-lg mb-6 container mx-auto">
-         {message}
-        </p>
-        {photo && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="w-48 h-48 mx-auto rounded-full overflow-hidden shadow-lg border-4 border-white"
-          >
-            <img src={photo} alt="LinkedIn Profile" className="w-full h-full object-cover" />
-          </motion.div>
-        )}
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-blue-500 to-purple-600">
+      <div className="mb-1">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="overflow-hidden border-4 border-white rounded-full shadow-lg"
+        >
+          <Image
+            width={250}
+            height={250}
+            src={"/jv.jpg"}
+            alt="LinkedIn Profile"
+            className="object-cover"
+          />
+        </motion.div>
+      </div>
+
+      <div className="p-6 text-center text-white">
+        <h1 className="mb-4 text-4xl font-bold">Muito Obrigado</h1>
+        <h1 className="mb-4 text-5xl font-bold">{name}!</h1>
+        <p className="container w-1/3 mx-auto mb-6 text-lg">{message}</p>
+        <p className="container w-1/3 mx-auto mb-6 text-lg">{message1}</p>
       </div>
     </div>
   );
