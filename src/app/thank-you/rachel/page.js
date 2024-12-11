@@ -18,8 +18,8 @@ export default function ThankYou() {
           className="overflow-hidden border-4 border-white rounded-full shadow-lg"
         >
           <Image
-            width={250}
-            height={250}
+            width={200}
+            height={200}
             src={"/rachel.jpg"}
             alt="LinkedIn Profile"
             className="object-cover"
