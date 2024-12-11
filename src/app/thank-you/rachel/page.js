@@ -28,7 +28,7 @@ export default function ThankYou() {
           </motion.div>
         </div>
 
-        <div className="p-6 text-center text-white">
+        <div className="p-1 text-center text-white">
           <h1 className="mb-4 text-4xl font-bold">Muito Obrigado</h1>
           <h1 className="mb-4 text-5xl font-bold">{name}!</h1>
           <p className="mb-6 text-lg">{message}</p>
